@@ -1,15 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
 import passport from '@/lib/passport';
 
-export async function GET(req: NextRequest) {
-  return new Promise((resolve) => {
-    // Получаем абсолютный базовый URL (http://localhost:3000)
+// Явно указываем, что функция возвращает Promise<NextResponse>
+export async function GET(req: NextRequest): Promise<NextResponse> {
+  return new Promise<NextResponse>((resolve) => {
     const baseUrl = process.env.NEXTAUTH_URL || req.nextUrl.origin;
     
     passport.authenticate('steam', {
-      failureRedirect: `${baseUrl}/`, // <-- ИСПРАВЛЕНО: абсолютный URL
+      failureRedirect: `${baseUrl}/`,
     })(req as any, {} as any, () => {
-      resolve(NextResponse.redirect(`${baseUrl}/dashboard`)); // <-- ИСПРАВЛЕНО: абсолютный URL
+      resolve(NextResponse.redirect(`${baseUrl}/dashboard`));
     });
   });
 }
