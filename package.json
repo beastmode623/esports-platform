@@ -1,0 +1,41 @@
+{
+  "name": "esports-platform",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prisma:seed": "ts-node prisma/seed.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.0.0",
+    "@tailwindcss/postcss": "^4.3.3",
+    "autoprefixer": "^10.5.4",
+    "connect-session-sequelize": "^7.1.7",
+    "cookie": "^1.1.1",
+    "express-session": "^1.19.0",
+    "framer-motion": "^11.0.0",
+    "next": "^14.2.5",
+    "next-auth": "4.24.7",
+    "passport": "^0.7.0",
+    "passport-steam": "^1.0.18",
+    "postcss": "^8.5.26",
+    "prisma": "^5.0.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "recharts": "^2.12.0"
+  },
+  "devDependencies": {
+    "@types/cookie": "^0.6.0",
+    "@types/express-session": "^1.19.0",
+    "@types/node": "^20.0.0",
+    "@types/passport": "^1.0.17",
+    "@types/react": "19.2.18",
+    "eslint": "^8.0.0",
+    "eslint-config-next": "14.2.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.0.0"
+  }
+}

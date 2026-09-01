@@ -1,0 +1,9 @@
+{
+  "json.schemas": [
+    {
+      "fileMatch": ["/tsconfig.json", "/package.json"],
+      "schema": {}
+    }
+  ],
+  "json.validate.enable": false
+}
