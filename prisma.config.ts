@@ -1,4 +1,4 @@
-import { definePrismaConfig } from "prisma/config";
+import { PrismaClient } from '@prisma/client';
 
 export default definePrismaConfig({
   skills: {
