@@ -1,7 +1,8 @@
 import passport from 'passport';
 import { Strategy as SteamStrategy } from 'passport-steam';
 
-if (!passport._strategy('steam')) {
+// @ts-ignore: _strategy is an internal method not exposed in @types/passport
+if (!(passport as any)._strategy('steam')) {
   passport.use(
     new SteamStrategy(
       {
@@ -21,11 +22,11 @@ if (!passport._strategy('steam')) {
   );
 }
 
-passport.serializeUser((user: any, done) => {
+passport.serializeUser((user: any, done: any) => {
   done(null, user);
 });
 
-passport.deserializeUser((obj: any, done) => {
+passport.deserializeUser((obj: any, done: any) => {
   done(null, obj);
 });
 
